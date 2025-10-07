@@ -7,118 +7,122 @@
     <title>Galactic Gateway</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d2b;
-            color: #e0e0f0;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #050510;
+            color: #e0e0ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            font-size: 1.2em; /* Made website bigger */
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-        header {
-            background: #1a1a4f;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #00bcd4 3px solid;
+            background-color: rgba(10, 10, 30, 0.8);
+            border-radius: 20px;
+            padding: 40px 60px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6), 0 0 80px rgba(138, 43, 226, 0.5); /* More glowy */
             text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 90%; /* Made website bigger */
+            box-sizing: border-box;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            text-shadow: 2px 2px 8px #00bcd4;
+        h1 {
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; /* More glowy */
+            font-size: 3.5em; /* Made website bigger */
+            margin-bottom: 20px;
         }
-        nav ul {
-            padding: 0;
-            list-style: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav ul li {
-            display: inline;
-            padding: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        .main-content {
-            padding: 40px 0;
-            background: #14143a;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
-        }
-        .main-content h2 {
-            color: #00bcd4;
-            text-align: center;
-            font-size: 2.5em;
-        }
-        .main-content p {
-            text-align: justify;
-            padding: 0 40px;
+        p {
+            margin: 20px 0;
+            line-height: 1.6;
+            color: #b0e0e6;
             font-size: 1.1em;
         }
-        .cta {
-            text-align: center;
+        .btn {
+            background-color: #8a2be2;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.3em; /* Made website bigger */
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* More glowy */
+            text-decoration: none;
+            display: inline-block;
             margin-top: 30px;
         }
-        .cta a {
-            display: inline-block;
-            background: #00bcd4;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background 0.3s ease;
+        .btn:hover {
+            background-color: #9932cc;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.8), 0 0 40px rgba(138, 43, 226, 0.7); /* More glowy */
+            transform: scale(1.05);
         }
-        .cta a:hover {
-            background: #0097a7;
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: transparent;
+            z-index: 0;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #1a1a4f;
-            color: #e0e0f0;
-            margin-top: 40px;
-            border-top: #00bcd4 3px solid;
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out;
+            opacity: 0;
         }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        /* More stars for a denser field */
+        .star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 20%; animation-delay: 0s; }
+        .star:nth-child(2) { width: 3px; height: 3px; top: 50%; left: 70%; animation-delay: 1s; }
+        .star:nth-child(3) { width: 2px; height: 2px; top: 80%; left: 40%; animation-delay: 2s; }
+        .star:nth-child(4) { width: 1px; height: 1px; top: 30%; left: 90%; animation-delay: 0.5s; }
+        .star:nth-child(5) { width: 3px; height: 3px; top: 60%; left: 10%; animation-delay: 1.5s; }
+        .star:nth-child(6) { width: 2px; height: 2px; top: 20%; left: 60%; animation-delay: 2.5s; }
+        .star:nth-child(7) { width: 1px; height: 1px; top: 70%; left: 30%; animation-delay: 3s; }
+        .star:nth-child(8) { width: 3px; height: 3px; top: 40%; left: 5%; animation-delay: 0.8s; }
+        .star:nth-child(9) { width: 2px; height: 2px; top: 90%; left: 50%; animation-delay: 1.2s; }
+        .star:nth-child(10) { width: 1px; height: 1px; top: 5%; left: 80%; animation-delay: 2.2s; }
+        .star:nth-child(11) { width: 2px; height: 2px; top: 25%; left: 15%; animation-delay: 0.3s; }
+        .star:nth-child(12) { width: 3px; height: 3px; top: 75%; left: 65%; animation-delay: 1.8s; }
+        .star:nth-child(13) { width: 1px; height: 1px; top: 45%; left: 35%; animation-delay: 2.8s; }
+        .star:nth-child(14) { width: 2px; height: 2px; top: 15%; left: 55%; animation-delay: 0.7s; }
+        .star:nth-child(15) { width: 3px; height: 3px; top: 85%; left: 25%; animation-delay: 1.7s; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Galactic Gateway</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Explorations</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container main-content">
-        <h2>Welcome, Traveler from the Stars!</h2>
-        <p>You have arrived at the nexus of intergalactic knowledge and adventure. Galactic Gateway is your premier portal to the farthest reaches of the cosmos, where untold wonders and ancient mysteries await your discovery. Our archives hold the chronicles of civilizations long past, the blueprints of future technologies, and the star maps to uncharted galaxies.</p>
-        <p>Prepare to embark on a journey that transcends time and space. Whether you seek the thrill of space exploration, the wisdom of alien cultures, or the secrets of the universe, your quest begins here. Our advanced AI navigators are ready to guide you through nebulae of data and asteroid fields of information.</p>
-        <div class="cta">
-            <a href="#">Begin Your Cosmic Voyage</a>
-        </div>
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
     </div>
-
-    <footer>
-        <p>&copy; 2077 Galactic Gateway. All rights reserved by the Interstellar Federation.</p>
-    </footer>
+    <div class="container">
+        <h1>Welcome to Galactic Gateway</h1>
+        <p>Embark on an interstellar journey through the cosmos. Discover new worlds, encounter alien civilizations, and unravel the mysteries of the universe.</p>
+        <p>Your adventure awaits. Are you ready to explore the unknown?</p>
+        <a href="#" class="btn">Begin Your Voyage</a>
+    </div>
 </body>
 </html>

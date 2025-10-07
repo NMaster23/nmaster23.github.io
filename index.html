@@ -1,128 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galactic Gateway</title>
+    <title>Galactic Gateway - Sci-Fi</title>
     <style>
         body {
+            font-family: 'Orbitron', sans-serif; /* A sci-fi font */
+            background: linear-gradient(to bottom, #0a0a2a, #1a0a3a);
+            color: #00ffff;
+            text-align: center;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #050510;
-            color: #e0e0ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
             min-height: 100vh;
-            overflow: hidden;
-            position: relative;
-            font-size: 1.2em; /* Made website bigger */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        nav {
+            background-color: rgba(0,0,0,0.6);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid rgba(0,255,255,0.4);
+            box-shadow: 0 0 15px rgba(0,255,255,0.6);
+        }
+        nav a {
+            margin: 0 20px;
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        nav a:hover {
+            color: #ccffff;
+            text-shadow: 0 0 12px #ccffff, 0 0 20px #ccffff;
         }
         .container {
-            background-color: rgba(10, 10, 30, 0.8);
-            border-radius: 20px;
-            padding: 40px 60px;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6), 0 0 80px rgba(138, 43, 226, 0.5); /* More glowy */
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 90%; /* Made website bigger */
-            box-sizing: border-box;
+            flex-grow: 1;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         h1 {
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; /* More glowy */
-            font-size: 3.5em; /* Made website bigger */
-            margin-bottom: 20px;
+            font-size: 5em;
+            text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite alternate;
         }
         p {
-            margin: 20px 0;
+            font-size: 1.8em;
             line-height: 1.6;
-            color: #b0e0e6;
-            font-size: 1.1em;
+            text-shadow: 0 0 8px #00ffff;
         }
-        .btn {
-            background-color: #8a2be2;
-            color: #ffffff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.3em; /* Made website bigger */
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* More glowy */
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 30px;
+        .footer {
+            padding: 20px;
+            background-color: rgba(0,0,0,0.6);
+            border-top: 2px solid rgba(0,255,255,0.4);
+            box-shadow: 0 0 15px rgba(0,255,255,0.6);
+            margin-top: auto;
         }
-        .btn:hover {
-            background-color: #9932cc;
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.8), 0 0 40px rgba(138, 43, 226, 0.7); /* More glowy */
-            transform: scale(1.05);
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(1.05); opacity: 0.9; }
         }
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: transparent;
-            z-index: 0;
-        }
-        .star {
-            position: absolute;
-            background: #ffffff;
-            border-radius: 50%;
-            animation: twinkle 5s infinite ease-in-out;
-            opacity: 0;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-        /* More stars for a denser field */
-        .star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 20%; animation-delay: 0s; }
-        .star:nth-child(2) { width: 3px; height: 3px; top: 50%; left: 70%; animation-delay: 1s; }
-        .star:nth-child(3) { width: 2px; height: 2px; top: 80%; left: 40%; animation-delay: 2s; }
-        .star:nth-child(4) { width: 1px; height: 1px; top: 30%; left: 90%; animation-delay: 0.5s; }
-        .star:nth-child(5) { width: 3px; height: 3px; top: 60%; left: 10%; animation-delay: 1.5s; }
-        .star:nth-child(6) { width: 2px; height: 2px; top: 20%; left: 60%; animation-delay: 2.5s; }
-        .star:nth-child(7) { width: 1px; height: 1px; top: 70%; left: 30%; animation-delay: 3s; }
-        .star:nth-child(8) { width: 3px; height: 3px; top: 40%; left: 5%; animation-delay: 0.8s; }
-        .star:nth-child(9) { width: 2px; height: 2px; top: 90%; left: 50%; animation-delay: 1.2s; }
-        .star:nth-child(10) { width: 1px; height: 1px; top: 5%; left: 80%; animation-delay: 2.2s; }
-        .star:nth-child(11) { width: 2px; height: 2px; top: 25%; left: 15%; animation-delay: 0.3s; }
-        .star:nth-child(12) { width: 3px; height: 3px; top: 75%; left: 65%; animation-delay: 1.8s; }
-        .star:nth-child(13) { width: 1px; height: 1px; top: 45%; left: 35%; animation-delay: 2.8s; }
-        .star:nth-child(14) { width: 2px; height: 2px; top: 15%; left: 55%; animation-delay: 0.7s; }
-        .star:nth-child(15) { width: 3px; height: 3px; top: 85%; left: 25%; animation-delay: 1.7s; }
     </style>
 </head>
 <body>
-    <div class="stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
+    <nav>
+        <a href="index.html">Sci-Fi Gateway</a>
+        <a href="steampunk.html">Steampunk City</a>
+        <a href="pirate.html">Pirate Cove</a>
+        <a href="fantasy.html">Fantasy Realm</a>
+    </nav>
     <div class="container">
-        <h1>Welcome to Galactic Gateway</h1>
-        <p>Embark on an interstellar journey through the cosmos. Discover new worlds, encounter alien civilizations, and unravel the mysteries of the universe.</p>
-        <p>Your adventure awaits. Are you ready to explore the unknown?</p>
-        <a href="#" class="btn">Begin Your Voyage</a>
+        <h1>Galactic Gateway</h1>
+        <p>Embark on an interstellar journey through the cosmos. Discover new worlds, advanced civilizations, and the mysteries of the universe beyond the known frontiers.</p>
+        <p>Your adventure begins here, at the threshold of the infinite unknown.</p>
+    </div>
+    <div class="footer">
+        &copy; 2023 Multi-Verse Exploration. All rights reserved.
     </div>
 </body>
 </html>

@@ -3,81 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steampunk Citadel</title>
+    <title>Steampunk City</title>
     <style>
         body {
-            font-family: 'Times New Roman', serif;
-            background-color: #3e2723; /* Dark brown */
-            color: #d7ccc8; /* Light tan */
+            font-family: 'Georgia', serif; /* A classic, slightly antique font */
+            background: linear-gradient(to bottom, #4b372f, #2e1d17);
+            color: #d4b88c;
+            text-align: center;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            text-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Amber glow */
-        }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            background-color: #5d4037; /* Medium brown */
-            border: 2px solid #a1887f; /* Lighter brown border */
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.7); /* Stronger amber glow */
-            padding: 40px;
-            margin: 30px 0;
-            border-radius: 10px;
-            text-align: center;
-        }
-        h1, h2 {
-            color: #ffb74d; /* Orange/Gold */
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 8px rgba(255, 165, 0, 0.9);
-        }
-        p {
-            line-height: 1.8;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            justify-content: space-between;
         }
         nav {
-            background-color: #a1887f; /* Light brown */
-            padding: 15px 0;
-            width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px;
             text-align: center;
-            border-bottom: 2px solid #6d4c3d; /* Darker brown */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid rgba(212,184,140,0.4);
+            box-shadow: 0 0 15px rgba(212,184,140,0.6);
         }
         nav a {
-            color: #3e2723; /* Dark brown */
-            text-decoration: none;
             margin: 0 20px;
-            font-size: 1.2em;
+            color: #d4b88c;
+            text-decoration: none;
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            transition: color 0.3s ease;
         }
         nav a:hover {
-            background-color: #ffb74d; /* Orange/Gold */
-            color: #3e2723; /* Dark brown */
-            text-shadow: none;
+            color: #ffead0;
+        }
+        .container {
+            flex-grow: 1;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif; /* A more ornate font for headers */
+            font-size: 4.5em;
+            color: #ffead0;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 1.6em;
+            line-height: 1.7;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .footer {
+            padding: 20px;
+            background-color: rgba(0,0,0,0.7);
+            border-top: 2px solid rgba(212,184,140,0.4);
+            box-shadow: 0 0 15px rgba(212,184,140,0.6);
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Sci-Fi Hub</a>
-        <a href="steampunk.html">Steampunk Citadel</a>
+        <a href="index.html">Sci-Fi Gateway</a>
+        <a href="steampunk.html">Steampunk City</a>
         <a href="pirate.html">Pirate Cove</a>
         <a href="fantasy.html">Fantasy Realm</a>
     </nav>
     <div class="container">
-        <h1>Welcome to the Steampunk Citadel</h1>
-        <p>A marvel of gears, brass, and steam, where intricate mechanisms power a world of innovation and adventure. Explore the grand academies, witness the colossal airships, and delve into the mysteries of clockwork wonders.</p>
-        <h2>The Age of Ingenuity</h2>
-        <p>In this era, steam-powered automatons walk among us, scientists tinker with aetheric energies, and intrepid explorers chart the skies in their magnificent dirigibles. Every corner hums with the relentless rhythm of progress and discovery.</p>
-        <p>From the towering clock towers to the bustling markets filled with curious contraptions, the Steampunk Citadel invites you to a journey through an alternate history, brimming with anachronistic technologies and Victorian elegance.</p>
+        <h1>Welcome to Aethelburg</h1>
+        <p>In the heart of Aethelburg, gears churn and steam rises, powering a metropolis of intricate clockwork and ingenious automatons. Airships drift lazily above brass-clad buildings, carrying inventors and adventurers to their next grand endeavor.</p>
+        <p>Marvel at the ingenuity of the Victorian age, where science and fantasy intertwine.</p>
+    </div>
+    <div class="footer">
+        &copy; 2023 Multi-Verse Exploration. All rights reserved.
     </div>
 </body>
 </html>
